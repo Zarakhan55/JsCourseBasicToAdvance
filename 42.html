@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click</button>
+<p id="text"></p>
+
+<!-- Create a button
+
+On mouse over, show text: "Mouse is over"
+
+On mouse out, show text: "Mouse left" -->
+
+<script>
+const button=document.querySelector('#btn');
+const textes=document.querySelector('#text');
+button.addEventListener('mouseover',()=>{
+    textes.textContent="Mouse is over";
+    
+});
+button.addEventListener('mouseout',()=>{
+    textes.textContent="Mouse left";
+});
+</script>
+</body>
+</html>
