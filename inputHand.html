@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text" id="nameInput">
+<button id="btn">Submit</button>
+<p id="output"></p>
+
+<!-- 
+💬 Interview Question
+
+Q: Why do we use e.preventDefault()?
+A: To stop page reload on form submit.
+ -->
+
+
+
+
+
+<form id="myForm">
+    <input type="text" id="username">
+    <button>Send</button>
+</form>
+<p id="msg"></p>
+
+<script>
+const form = document.querySelector("#myForm");
+const msg = document.querySelector("#msg");
+
+const button = document.querySelector('#btn');
+const input = document.querySelector('#nameInput');
+const output = document.querySelector('#output');
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    msg.textContent = "Form submitted!";
+});
+
+btn.addEventListener("click", () => {
+    output.textContent = input.value;
+});
+</script>    
+</body>
+</html>
