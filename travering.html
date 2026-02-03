@@ -1,0 +1,69 @@
+<!-- // Traversing = moving inside the DOM tree
+// You move from:
+// Parent → Child
+// Child → Parent
+// One sibling → Another sibling
+// Think like family tree
+
+
+
+
+// Interview Quick Questions
+
+// Q: Difference children vs childNodes?
+// A:
+// children → only elements
+// childNodes → text + comments + elements
+// Q: Why use createElement?
+// A: To add dynamic content
+ -->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+   <button id="addBtn">Add Item</button>
+<ul id="list"></ul>
+
+    <script>
+        const btn = document.querySelector("#addBtn");
+const list = document.querySelector("#list");
+
+let count = 1;
+
+btn.addEventListener("click", () => {
+  const li = document.createElement("li");
+  li.innerText = "Item " + count;
+  count++;
+
+  // when li clicked → change parent background
+  li.addEventListener("click", () => {
+    li.parentElement.style.backgroundColor = "lightblue";
+  });
+
+  list.appendChild(li);
+  li.addEventListener("dblclick", () => {
+    li.parentElement.style.backgroundColor = "";
+});
+
+    </script>
+ </body>
+ </html>
+
+
+
+
+
+
+
+
+
+ <!-- createElement → makes new <li>
+appendChild → adds to <ul>
+parentElement → traversing
+addEventListener → click events -->
