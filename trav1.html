@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 43 Practice</title>
+  <style>
+    ul {
+      padding: 10px;
+      border: 1px solid black;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="addBtn">Add Item</button>
+<ul id="list"></ul>
+
+<script>
+  const btn = document.querySelector("#addBtn");
+  const list = document.querySelector("#list");
+
+  let count = 1;
+
+  btn.addEventListener("click", () => {
+    const li = document.createElement("li");
+    li.innerText = "Item " + count;
+    count++;
+
+    // single click → change parent background
+    li.addEventListener("click", () => {
+      list.style.backgroundColor = "lightblue";
+    });
+
+    // double click → remove that li
+    li.addEventListener("dblclick", () => {
+      li.remove();
+    });
+
+    list.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
