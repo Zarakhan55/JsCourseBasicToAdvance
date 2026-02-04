@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="box">
+        <button id="btn">Click</button>
+    </div>
+    
+    <script>
+        const box = document.querySelector("#box");
+        const btn = document.querySelector("#btn");
+
+        box.addEventListener("click", () => {
+            alert("Box clicked");
+        });
+
+        btn.addEventListener("click", (e) => {
+            alert("Button clicked");
+            e.stopPropagation(); // Prevents the event from bubbling up to the box
+        });
+  
+
+    </script>
+</body>
+</html>
+
+<!-- 
+🎤 Interview Questions
+
+Q: What is event bubbling?
+A: Event travels from child to parent.
+
+Q: Why use event delegation?
+A: Performance and dynamic elements.
+
+Q: How to stop bubbling?
+A: e.stopPropagation() -->
+
+
+
+<!-- 
+
+What is Event Bubbling? (Easy Words)
+
+Event Bubbling = Event goes from child → parent → document
+
+Example:
+
+You click a button inside a div
+
+First button runs
+
+Then div runs
+
+Then body runs
+
+Like bubble going up in water 🫧 -->
