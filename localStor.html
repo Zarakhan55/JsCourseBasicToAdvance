@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Local Storage
+Data stays even after browser close.
+Use when:
+Remember user name
+Dark mode
+Cart items
+Settings -->
+
+<!-- localStorage.setItem("name", "Zara");   // save
+localStorage.getItem("name");           // read
+localStorage.removeItem("name");        // delete
+localStorage.clear();                   // delete all -->
+
+<h2>Save Your Name</h2>
+
+<input type="text" id="nameInput" placeholder="Enter your name">
+<button id="saveBtn">Save</button>
+
+<p id="output"></p>
+
+<script>
+
+  const input = document.querySelector("#nameInput");
+  const btn = document.querySelector("#saveBtn");
+  const output = document.querySelector("#output");
+
+  // Show saved name on page load
+  const savedName = localStorage.getItem("username");
+  if (savedName) {
+    output.textContent = "Saved Name: " + savedName;
+  }
+
+  // Save button click
+  btn.addEventListener("click", () => {
+    const name = input.value;
+
+    localStorage.setItem("username", name); // save
+    output.textContent = "Saved Name: " + name;
+
+    input.value = "";
+  });
+
+</script>
+
+</body>
+</html>
