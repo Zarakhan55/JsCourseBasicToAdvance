@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Storage Color</title>
+</head>
+<body>
+
+<input type="text" id="txt" placeholder="Enter color">
+<button id="btn">Save</button>
+
+<p id="input">Color Preview</p>
+
+<script>
+  const box = document.querySelector("#txt");
+  const btn = document.querySelector("#btn");
+  const para = document.querySelector("#input");
+
+  // Load saved color on page load
+  const savedColor = localStorage.getItem("bgcolor");
+  if (savedColor) {
+    para.style.backgroundColor = savedColor;
+  }
+
+  btn.addEventListener("click", () => {
+    const color = box.value;
+
+    localStorage.setItem("bgcolor", color);
+    para.style.backgroundColor = color;
+
+    box.value = "";
+  });
+</script>
+
+</body>
+</html>
