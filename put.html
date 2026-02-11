@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="updateBtn">Update</button>
+    <button id="deleteBtn">Delete</button>
+
+<script>
+    document.getElementById('updateBtn').addEventListener('click',()=>{
+        fetch('http://localhost:3000/posts/1',{
+            method:'PUT',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                id:1,
+                title:'foo',
+                body:'bar',
+                userId:1
+            })
+        }).then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            alert('Data updated successfully');
+        });
+
+    })
+
+    document.getElementById('deleteBtn').addEventListener('click',()=>{
+        fetch('http://localhost:3000/posts/1',{
+            method:'DELETE'
+        }).then(res=>{
+            if(res.ok){
+                alert('Data deleted successfully');
+            }else{
+                alert('Failed to delete data');
+            }
+        });
+
+    })
+</script>
+</body>
+</html>
