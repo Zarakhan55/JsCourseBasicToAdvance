@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="btn">Send data plz</button>
+
+<script>
+document.getElementById("btn").addEventListener("click", async () => {
+  try {
+    const res = await fetch("https://wrongurl.com");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log("API Error");
+  }
+});
+</script>
+
+</body>
+</html>
