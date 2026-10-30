@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Zara<span>Tech</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <button class="login">Login</button>
+
+    </nav>
+
+    <script>
+        let btn = document.querySelector('.login');
+
+        btn.addEventListener('click', function() {
+
+            btn.innerHTML = 'Logged In';
+
+            alert('Login button clicked!');
+
+        });
+    </script>
+
+</body>
+</html>

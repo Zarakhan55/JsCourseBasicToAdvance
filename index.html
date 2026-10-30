@@ -1,32 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .active{
-            color:red;
-            background-color:yellow;
-            font-size:20px;
-        }
-
-    </style>
+    <title>Product Card</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <form id="myForm">
-    <input type="text" id="nameInput" placeholder="Enter your name">
-    <button type="submit">Submit</button>
-  </form>
 
+    <div class="container">
 
-  <button id="btn1">Add Item</button>
-<button id="btn2">Change Color</button>
-    <p id="txt">
- Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as a tree of nodes, where each node corresponds to a part of the document, such as an element, attribute, or text.
- In JavaScript, you can interact with the DOM to manipulate HTML and CSS dynamically. This allows you to create interactive web pages by adding, removing, or modifying elements and their styles in response to user actions or other events.
-</p>
-<button id="btn"> Click me!</button>
-    <script src="DOm.js"></script>
+        <div class="card">
+
+            <div class="text">
+                <img src="https://plus.unsplash.com/premium_photo-1677158265072-5d15db9e23b2?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Wireless Headphones">
+
+                <h2>Wireless Headphones</h2>
+
+                <p>Price: Rs. 2,500</p>
+            </div>
+
+            <div class="price">
+                <button class="btn-cart" id="addCart">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="cart-info">
+                <h3>Cart Quantity: <span id="quantity">0</span></h3>
+
+                <h3>Total Price: Rs. <span id="total">0</span></h3>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

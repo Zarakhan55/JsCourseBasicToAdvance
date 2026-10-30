@@ -1,65 +1,55 @@
 *{
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+  box-sizing: border-box;
 }
-
-body{
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
+    padding: 0 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: #007bff;
+}
+.logo span{
+    color: #222;
 }
 
-/* Container */
-.b-box{
+.login:hover{
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+.navbar ul{
     display: flex;
-    gap: 20px;   
-    flex-wrap: wrap; 
+    list-style: none;
 }
-
-/* Card Box */
-.box{
-    width: 200px;
-    height: 200px;
-    display: flex;                 
-    flex-direction: column;        
-    justify-content: center;
-    align-items: center;
+.navbar ul li{
+    margin: 0 10px;
 }
-
-/* Image Box */
-.box .im{
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    border-radius: 30%;
+.navbar ul li a{
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    transition: 0.3s;
 }
-
-.box .im img{
-    width: 80%;
+.navbar ul li a:hover{
+    color: #007bff;
 }
-
-/* Text */
-.box .text{
-    color: green;
-    margin-top: 10px;
+.login{
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-
-/* ===================== */
-/* Mobile */
-@media (max-width: 600px) {
-    .b-box{
-        flex-direction: column;   
-        align-items: center;
-    }
-
-    .box .im{
-        width: 70px;
-        height: 70px;
-    }
+.login:hover{
+    background-color: #0056b3;
 }
