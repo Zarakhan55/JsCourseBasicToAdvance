@@ -1,39 +1,10 @@
-// let today=new Date();
-// console.log(today);
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
+const target = new Date(2027, 0, 1);
 
-// let date = new Date("2026-10-30");
+const msPerDay = 1000 * 60 * 60 * 24;
+const days = Math.round((target - today) / msPerDay);
 
-// // console.log(date);
-// let today = new Date();
-
-// console.log(today.getFullYear());
-// console.log(today.getMonth());
-// console.log(today.getDate());
-// console.log(today.getDay());
-// console.log(today.getHours());
-// console.log(today.getMinutes());
-// console.log(today.getSeconds());
-// console.log(today.getMilliseconds());
-// console.log(today.getFullYear());
-// console.log(today.getMonth());
-// console.log(today.getDate());
-// console.log(today.getDay());
-// console.log(today.getHours());
-// console.log(today.getMinutes());
-// console.log(today.getSeconds());
-// console.log(today.getMilliseconds());
-
-// let dates = new Date(2026, 9, 30);
-
-// console.log(dates);
-
-
-
-let today = new Date();
-
-console.log(today.toDateString());
-console.log(today.toTimeString());
-console.log(today.toLocaleDateString());
-console.log(today.toLocaleTimeString());
-console.log(today.toISOString());
+console.log(`${days} days until New Year's Day`);
+// On November 3, 2026 this prints: 59 days until New Year's Day
