@@ -1,43 +1,123 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Card</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Food Paradise</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background: #202b25;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .menu {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .food {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .price {
+            color: #16834b;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
 
-    <div class="container">
+<header>
+    <h1 id="hd">🍽️ FOOD PARADISE</h1>
+    <p>Fresh • Delicious • Made with Love</p>
+</header>
 
-        <div class="card">
+<div class="menu">
 
-            <div class="text">
-                <img src="https://plus.unsplash.com/premium_photo-1677158265072-5d15db9e23b2?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Wireless Headphones">
+    <h2>Today's Special</h2>
 
-                <h2>Wireless Headphones</h2>
-
-                <p>Price: Rs. 2,500</p>
-            </div>
-
-            <div class="price">
-                <button class="btn-cart" id="addCart">
-                    Add to Cart
-                </button>
-            </div>
-
-            <div class="cart-info">
-                <h3>Cart Quantity: <span id="quantity">0</span></h3>
-
-                <h3>Total Price: Rs. <span id="total">0</span></h3>
-            </div>
-
-        </div>
-
+    <div class="food">
+        <h3>🍔 Classic Beef Burger</h3>
+        <p>Juicy beef with cheese and fresh vegetables.</p>
+        <p class="price">$8.99</p>
     </div>
 
-    <script src="script.js"></script>
+    <div class="food">
+        <h3>🍕 Cheese Pizza</h3>
+        <p>Delicious pizza with extra cheese.</p>
+        <p class="price">$10.99</p>
+    </div>
+
+    <h2>Drinks Menu</h2>
+
+    <div class="food">
+        <h3>🥤 Cold Drink</h3>
+        <p class="price">$2.99</p>
+    </div>
+
+    <div class="food">
+        <h3>🍊 Fresh Orange Juice</h3>
+        <p class="price">$3.99</p>
+    </div>
+
+    <h2>Customer Reviews</h2>
+
+    <p>⭐⭐⭐⭐⭐ Amazing food and excellent service!</p>
+
+</div>
+
+<script>
+
+// Select main heading
+var head = document.querySelector("#hd");
+head.style.color = "orange";
+
+// Select all headings
+var heads = document.querySelectorAll("h1, h2, h3, h4, h5");
+
+heads.forEach(function(element) {
+
+    if (element.textContent.includes("Today's Special")) {
+        element.style.color = "red";
+        element.style.fontSize = "30px";
+    }
+
+    else if (element.textContent.includes("Drinks Menu")) {
+        element.style.color = "blue";
+        element.style.fontSize = "28px";
+    }
+
+    else if (element.textContent.includes("Customer Reviews")) {
+        element.style.color = "green";
+        element.style.fontSize = "25px";
+    }
+
+    else if (element.textContent.includes("Burger")) {
+        element.style.color = "brown";
+    }
+
+    else if (element.textContent.includes("Pizza")) {
+        element.style.color = "purple";
+    }
+
+});
+
+</script>
 
 </body>
 </html>
