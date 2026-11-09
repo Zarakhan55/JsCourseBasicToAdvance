@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #12355b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="studentForm">
+
+        <h1>Student Registration</h1>
+
+        <input type="text" id="studentName"
+            placeholder="Enter your name">
+
+        <input type="number" id="age"
+            placeholder="Enter your age">
+
+        <input type="email" id="email"
+            placeholder="Enter your email">
+
+        <input type="password" id="password"
+            placeholder="Enter your password">
+
+        <select id="university">
+            <option value="">Select Course</option>
+            <option value="BSIT">BSIT</option>
+            <option value="BSE">BSE</option>
+            <option value="BSC">BSC</option>
+        </select>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+
+        // STEP 1: Select Elements
+
+        const form = document.getElementById("studentForm");
+
+        const name = document.querySelector("#studentName");
+        const age = document.getElementById("age");
+        const email = document.querySelector("#email");
+        const password = document.getElementById("password");
+        const university = document.querySelector("#university");
+
+        const result = document.getElementById("result");
+
+        // STEP 2: Select All Inputs
+
+        const allInputs = document.querySelectorAll("input");
+
+        console.log(allInputs);
+
+        // STEP 3: Form Submit Event
+
+        form.addEventListener("submit", function(e) {
+
+            // Stop page reload
+            e.preventDefault();
+
+            // STEP 4: Get Values
+
+            let studentName = name.value;
+            let studentAge = age.value;
+            let studentEmail = email.value;
+            let studentPassword = password.value;
+            let studentCourse = university.value;
+
+            // STEP 5: Console Output
+
+            console.log(studentName);
+            console.log(studentAge);
+            console.log(studentEmail);
+            console.log(studentPassword);
+            console.log(studentCourse);
+
+            // STEP 6: Show Result
+
+            result.textContent =
+                "Name: " + studentName +
+                " | Age: " + studentAge +
+                " | Email: " + studentEmail +
+                " | Course: " + studentCourse;
+
+        });
+
+    </script>
+
+</body>
+</html>
