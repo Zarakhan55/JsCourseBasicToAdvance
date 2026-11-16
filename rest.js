@@ -1,28 +1,57 @@
-// Example 1: Basic Default Parameter
-function greet(name = "Guest") {
-  console.log("Hello " + name);
+// let skills = ["HTML", "CSS", "JavaScript", "React", "Bootstrap"];
+
+// // Destructure:
+// // first = HTML
+// // second = CSS
+// // remaining = JavaScript, React, Bootstrap
+
+// let [first,second, ...remaining] = skills;
+
+// console.log(first);
+// console.log(second);
+// console.log(remaining);
+
+
+// let employee = {
+//     name: "Zara",
+//     age: 22,
+//     salary: 60000,
+//     city: "Karachi",
+//     department: "IT"
+// };
+
+// // name ko separate nikalo
+// // remaining properties ko otherDetails mein collect karo
+// let { name, ...otherDetails } = employee;
+
+// console.log(name);
+// console.log(otherDetails);
+
+
+// function calculateTotal(...prices) {
+//     let total = prices.reduce((accumulator, currentValue) => {
+//         return accumulator + currentValue;
+//     }, 0);
+
+//     console.log(total);}
+// calculateTotal(100, 200, 300, 400, 500);
+
+// // Expected output: 1500
+
+
+
+
+
+
+
+function calculateTotal(...prices) {
+let total = prices.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+    // Use reduce()
+    // Calculate total
+    // Print total
+console.log(total);
 }
 
-greet("Zara"); // Hello Zara
-greet();       // Hello Guest
-
-// Example 2: Default with Numbers
-function calculatePrice(price, tax = 0.1) {
-  return price + (price * tax);
-}
-
-console.log(calculatePrice(1000));     // 1100
-console.log(calculatePrice(1000, 0.2)); // 1200
-// Rest + Default Together
-function orderSummary(discount = 0, ...prices) {
-  let total = prices.reduce((sum, p) => sum + p, 0);
-  return total - discount;
-}
-
-console.log(orderSummary(50, 200, 300, 100)); // 550
-
-//1
-function maxNumber(large){
-    return large.Maximun
-}
-maxNumber(5, 12, 3, 20, 8); // 20
+calculateTotal(500, 1000, 1500, 2000);
